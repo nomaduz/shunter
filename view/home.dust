@@ -2,12 +2,12 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" class="no-javascript">
     <head>
         <meta charset="utf-8" />
-        <title>Page Title: Home</title>
+        <title>Page Title: {data.title}</title>
     </head>
     <body>
         <header>
             <section>
-                <h1>Page Title</h1>
+                <h1>{data.title}</h1>
             </section>
         </header>
         <main class="clearfix">
@@ -17,20 +17,13 @@
 
             <aside id="sidebar" class="sidebar" role="complementary">
                 <section class="social-media">
-                    <h1>Follow us</h1>
+                    <h1>{data.title}</h1>
                     <ul class="social-media__list">
-                        <li class="social-media__rss">
-                            <a href="http://www.example.com/feeds.html" title="RSS feed">RSS feed</a>
+                    {#data.items}
+                        <li class="social-media__{.key}">
+                            <img src="{@assetPath src="{.key}.svg"/}" alt="{.tip}" /><a href="{.link}" title="{.tip}">{.text}</a>
                         </li>
-                        <li class="social-media__twitter">
-                            <a href="http://twitter.com/example" title="Follow us on Twitter">Follow us on Twitter</a>
-                        </li>
-                        <li class="social-media__facebook">
-                            <a href="http://www.facebook.com/example" title="Follow us on Facebook">Follow us on Facebook</a>
-                        </li>
-                        <li class="social-media__email">
-                            <a href="http://www.example.com/alerts/" title="E-alert sign up">E-alert sign up</a>
-                        </li>
+                    {/data.items}
                     </ul>
                 </section>
             </aside>
